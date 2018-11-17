@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  db:
+    image: postgres:11-alpine
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword 
+    ports:
+      - 5432:5432
+    volumes:
+      - ./initdb.d:/docker-entrypoint-initdb.d
